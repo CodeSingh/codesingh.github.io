@@ -1,0 +1,14 @@
+{
+  "id": 1,
+  "Title": "10 minute shake 1",
+  "Players":"2+",
+  "Description": "When there's a crash on the track, Red the fire truck is there in a flash to help. Can you battle the flames and stop the fire spreading?",
+  "Steps": [{
+    "Step": 1, "Description": "Choose one person to pretend to be Red the fire truck, and the other to be the fire."
+
+  }, {
+    "Step": 2, "Description": "The person who is fire now throws all the sheets of paper into the air – when the last one lands on the ground, start the Disney timer. Fire must turn as many sheets over to read FIRE, while Red turns them over to read WATER."
+
+  }]
+  
+}
