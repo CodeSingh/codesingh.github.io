@@ -1,4 +1,4 @@
-[{
+var shakeups = [{
   "id": 1,
   "Title": "10 minute shake 1",
   "Players":"2+",
@@ -40,4 +40,4 @@
   }]
   
 },
-]
+];
