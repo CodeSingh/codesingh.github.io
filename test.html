@@ -2,7 +2,7 @@
   <head><title>Code Singh</title></head>
   <script src='https://unpkg.com/vue' ></script>
   <body>
-    <div id="app">
+    <div id='app'>
       <greeting></greeting>
     </div>
   </body>
@@ -10,7 +10,7 @@
 
 
 
-<template id="greeting-template">
+<template id='greeting-template'>
   <h1>Welcome to coligo!</h1>
   <button>login</button>
   <button>signup</button>
@@ -18,12 +18,14 @@
 </template>
 
 <script>  
-Vue.component('greeting', {
-  template: '#greeting-template'
-});
+
 
 // create a new Vue instance and mount it to our div element above with the id of app
 var vm = new Vue({
   el: '#app'
 });
+  
+Vue.component('greeting', {
+  template: '#greeting-template'
+});  
 </script>
