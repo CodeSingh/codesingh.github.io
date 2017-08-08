@@ -1,9 +1,8 @@
 <html>
-  <head><title>Code Singh</title></head>
-  <script src='https://unpkg.com/vue' ></script>
+  <head><title>10 minute shake up</title></head>
+
   <body>
     <div id='app'>
-      test
       <greeting></greeting>
     </div>
   </body>
@@ -12,22 +11,27 @@
 
 
 <template id='greeting-template'>
-  <a href="http://coligo.io">Check out the other tutorials!</a>
-  <h1>Welcome to coligo!</h1>
-  <button>login</button>
-  <button>signup</button>
-  <a href="http://coligo.io">Check out the other tutorials!</a>
+	<div>
+		<div v-for="item in dt">
+			{{item.Description}}
+		</div>
+	</div>
 </template>
-
+<script type="text/javascript" src="10minshakeups.json"></script>
+<script src='https://unpkg.com/vue' ></script>
 <script>  
 
+
+Vue.component('greeting', {
+  template: '#greeting-template',
+	data: function (){
+		return {dt: shakeups}
+	}
+}); 
 
 // create a new Vue instance and mount it to our div element above with the id of app
 var vm = new Vue({
   el: '#app'
 });
-  
-Vue.component('greeting', {
-  template: '#greeting-template'
-});  
+   
 </script>
