@@ -1,19 +1,19 @@
 <html>
-  <head><title>10 minute shake up</title></head>
+  <head><title>10 minute shake up - Random Shake up</title></head>
 
   <body>
     <div id='app'>
-      <greeting></greeting>
+      <random-shakeup></random-shakeup>
     </div>
   </body>
 </html>
 
 
 
-<template id='greeting-template'>
+<template id='random-shakeup-template'>
 	<div>
-		<div v-for="item in dt">
-			{{item.Description}}
+		<div v-model="dt">
+			{{Description}}
 		</div>
 	</div>
 </template>
@@ -22,10 +22,12 @@
 <script>  
 
 
-Vue.component('greeting', {
-  template: '#greeting-template',
+Vue.component('random-shakeup', {
+  template: '#random-shakeup-template',
 	data: function (){
-		return {dt: shakeups}
+		var cntShakeups = len(shakeups);
+		var item = getRandomInt(0, cntShakeups - 1);
+		return {dt: shakeups[item]}
 	}
 }); 
 
@@ -34,4 +36,10 @@ var vm = new Vue({
   el: '#app'
 });
    
+	 
+// Returns a random integer between min (included) and max (included)
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 </script>
