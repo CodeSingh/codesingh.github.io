@@ -1,18 +1,48 @@
+<!DOCTYPE html>
 <html>
-  <head><title>10 minute shake up - Random Shake up</title></head>
-
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>10 minute shake up - Random Shake up</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css">
+  </head>
   <body>
-    <div id='app'>
-      <random-shakeup></random-shakeup>
+  <section class="section">
+    <div class="container" id='app'>
+      <h1 class="title">
+        Hello World
+      </h1>
+      <p class="subtitle">
+        My first website with <strong>Bulma</strong>!
+			</p>
+			<random-shakeup></random-shakeup>
     </div>
+  </section>
   </body>
 </html>
 
 <template id='random-shakeup-template'>
-	<div>
-		<div>
-			{{dt.Description}}
+	<div class="card">
+		<header class="card-header">
+			<p class="card-header-title">
+				{{dt.Title}}
+			</p>
+			<a class="card-header-icon">
+				<span class="icon">
+					<i class="fa fa-angle-down"></i>
+				</span>
+			</a>
+		</header>
+		<div class="card-content">
+			<div class="content">
+				{{dt.Description}}
+			</div>
 		</div>
+		<footer class="card-footer">
+				<a class="card-footer-item">Players: {{dt.Players}}</a>
+			<a class="card-footer-item">Start</a>
+		</footer>
 	</div>
 </template>
 
@@ -25,7 +55,6 @@ Vue.component('random-shakeup', {
 	data: function (){
 		var cntShakeups = shakeups.length;
 		var item = getRandomInt(0, cntShakeups - 1);
-		console.log(item);
 		return {dt: shakeups[item]}
 	}
 }); 
