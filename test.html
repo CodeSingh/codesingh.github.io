@@ -8,25 +8,24 @@
   </body>
 </html>
 
-
-
 <template id='random-shakeup-template'>
 	<div>
-		<div v-model="dt">
-			{{Description}}
+		<div>
+			{{dt.Description}}
 		</div>
 	</div>
 </template>
-<script type="text/javascript" src="10minshakeups.json"></script>
+
+<script type='text/javascript' src='10minshakeups.json'></script>
 <script src='https://unpkg.com/vue' ></script>
 <script>  
-
 
 Vue.component('random-shakeup', {
   template: '#random-shakeup-template',
 	data: function (){
-		var cntShakeups = len(shakeups);
+		var cntShakeups = shakeups.length;
 		var item = getRandomInt(0, cntShakeups - 1);
+		console.log(item);
 		return {dt: shakeups[item]}
 	}
 }); 
@@ -36,9 +35,7 @@ var vm = new Vue({
   el: '#app'
 });
    
-	 
 // Returns a random integer between min (included) and max (included)
-
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
